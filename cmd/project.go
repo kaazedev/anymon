@@ -14,13 +14,14 @@ var createProjectCmd = &cobra.Command{
 		if err != nil {
 			fmt.Println("Error creating project:", err)
 		}
+
 	},
 }
 
 var listenCmd = &cobra.Command{
-
-	Use:   "listen",
-	Short: "Listen for file changes",
+	Use:     "listen",
+	Aliases: []string{"l"},
+	Short:   "Listen for file changes",
 	Run: func(cmd *cobra.Command, args []string) {
 		curr, err := project.ParseProject()
 		if err != nil {
